@@ -48,29 +48,29 @@ public class RegistrationFormTest {
         driver.switchTo().alert().accept();
     }
 
-//    @Test
-//    public void testRegistrationWithWeakPassword() throws InterruptedException {
-//        // Trường hợp: Đăng ký với mật khẩu không đủ mạnh
-//        WebElement signUpButton = driver.findElement(By.id("signin2"));
-//        signUpButton.click();
-//        Thread.sleep(2000);
-//
-//        WebElement usernameField = driver.findElement(By.id("sign-username"));
-//        WebElement passwordField = driver.findElement(By.id("sign-password"));
-//        WebElement signUpSubmitButton = driver.findElement(By.xpath("//button[text()='Sign up']"));
-//
-//        // Nhập thông tin với mật khẩu yếu (mật khẩu ngắn)
-//        usernameField.sendKeys("testuserNew");
-//        passwordField.sendKeys("123");  // Mật khẩu yếu
-//        signUpSubmitButton.click();
-//
-//        Thread.sleep(2000);
-//
-//        // Kiểm tra thông báo về mật khẩu yếu (giả sử hệ thống có logic kiểm tra)
-//        String alertMessage = driver.switchTo().alert().getText();
-//        Assert.assertEquals(alertMessage, "Password too weak.");
-//        driver.switchTo().alert().accept();
-//    }
+    @Test
+    public void testRegistrationWithWeakPassword() throws InterruptedException {
+        // Trường hợp: Đăng ký với mật khẩu không đủ mạnh
+        WebElement signUpButton = driver.findElement(By.id("signin2"));
+        signUpButton.click();
+        Thread.sleep(2000);
+
+        WebElement usernameField = driver.findElement(By.id("sign-username"));
+        WebElement passwordField = driver.findElement(By.id("sign-password"));
+        WebElement signUpSubmitButton = driver.findElement(By.xpath("//button[text()='Sign up']"));
+
+        // Nhập thông tin với mật khẩu yếu (mật khẩu ngắn)
+        usernameField.sendKeys("testuserNew");
+        passwordField.sendKeys("123");  // Mật khẩu yếu
+        signUpSubmitButton.click();
+
+        Thread.sleep(2000);
+
+        // Kiểm tra thông báo về mật khẩu yếu (giả sử hệ thống có logic kiểm tra)
+        String alertMessage = driver.switchTo().alert().getText();
+        Assert.assertEquals(alertMessage, "Password too weak.");
+        driver.switchTo().alert().accept();
+    }
 
     @Test
     public void testSuccessfulRegistration() throws InterruptedException {
